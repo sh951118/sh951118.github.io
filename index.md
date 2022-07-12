@@ -1,11 +1,8 @@
 ---
 layout: default
 ---
-
-MarkDown 텍스트 예시 : Text can be **bold**, _italic_, or ~~strikethrough~~.
-
-### 경험한 언어 list:
-
+<!-- MarkDown 텍스트 예시 : Text can be **bold**, _italic_, or ~~strikethrough~~. -->
+### **경험 언어 List**
 - Back-end item
   - Java
   - Apache(Web Server) / Tomcat(WAS)
@@ -18,7 +15,7 @@ MarkDown 텍스트 예시 : Text can be **bold**, _italic_, or ~~strikethrough~~
     - Bootstrap
     - React.js
       - Redux
-  - node.js
+  - node.js / Ruby(블로그 만들면서 사용.. jekyll)
     - npm
 - DevOps(CI/CD)
   - GitLab(Git)
@@ -29,85 +26,42 @@ MarkDown 텍스트 예시 : Text can be **bold**, _italic_, or ~~strikethrough~~
   - VsCode
   - DBeaver
 
+### **개발 경력 List**
+
+| 기 간             | 기 관 / 장 소                          |
+|:------------------|:--------------------------------------|
+| 2014-02 ~ 2020-02 | 인제대학교(컴퓨터공학)                 |
+| 2020-01 ~ 2020-07 | 비트교육센터(Java-FullStack 전문가과정)|
+| 2020-08 ~ 진행중  | 더존비즈온(HR 평가/급여, ERP)          |
+
 ### 개발 자료실
-[1페이지](./another-page1.html).
 
+> 기본. 자료형 변환 정리( ~ to ~ )
+[자세히 보기](./another-page1.html).
 
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### 예제 소스코드
-
+```java
+// Java String to Int 예시
+String to_str = "10";
+int to_num = Integet.parseInt(to_str); // 기본 자료형
+int to_num = Integet.valueOf(to_str);  // 객체
+```
 ```js
-// Javascript code 예시
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
+// JavaScript 예시
+var to_int = parseInt("10"); // 정수
+var to_int = Nember("10");   // 정수&실수
+var to_str = String(10);
+var to_str = 10 + "";
 ```
 
-```ruby
-# Ruby code 예시
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
+> Back-end 기본. 재귀함수
+[자세히 보기](./another-page1.html).
+
+```java
+// Java String to Int 예시
+String to_str = "10";
+int to_num = Integet.parseInt(to_str); // 기본 자료형
+int to_num = Integet.valueOf(to_str);  // 객체
 ```
-
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
 
 ### Small image
 
@@ -116,20 +70,6 @@ end
 ### Large image
 
 ![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
 
 ```
 Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.

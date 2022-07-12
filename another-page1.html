@@ -4,9 +4,10 @@ layout: default
 <!-- Welcome to another page -->
 <!DOCTYPE html>
 <html>
-  <p>test</p>
   <!-- input 및 button에는 onclick이벤트 사용 -->
-  <p id = "anotherpage1_pageback" onmouseover="MouseOver()" onclick="PageBack()">뒤로가기</p>
+  <p id = "anotherpage1_pageback" style="width: 60px;" onmouseover="MouseOver()" onmouseout="MouseOut()" onclick="PageBack()">뒤로가기</p>
+
+  <p>test</p>
 </html>
 
 <script>
@@ -17,6 +18,12 @@ layout: default
   function MouseOver(event){
     document.getElementById("anotherpage1_pageback").style.color = 'blue';
     document.getElementById("anotherpage1_pageback").style.textDecoration = 'underline';
+    document.getElementById("anotherpage1_pageback").style.cursor = 'pointer';
+  }
+  function MouseOut(event){
+    document.getElementById("anotherpage1_pageback").style.color = 'black';
+    document.getElementById("anotherpage1_pageback").style.textDecoration = 'none';
+    document.getElementById("anotherpage1_pageback").style.cursor = 'none';
   }
 </script>
 
