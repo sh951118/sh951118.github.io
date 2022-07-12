@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<!-- Welcome to another page -->
+<!DOCTYPE html>
+<html>
+  <p>test</p>
+  <!-- input 및 button에는 onclick이벤트 사용 -->
+  <p id = "anotherpage1_pageback" onmouseover="MouseOver()" onclick="PageBack()">뒤로가기</p>
+</html>
+
+<script>
+  // document.getElementById("anotherpage1_pageback").addEventListener('click', PageBack);
+  function PageBack(){
+    window.history.back();
+  };
+  function MouseOver(event){
+    document.getElementById("anotherpage1_pageback").style.color = 'blue';
+    document.getElementById("anotherpage1_pageback").style.textDecoration = 'underline';
+  }
+</script>
+
