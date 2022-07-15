@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<!-- Welcome to another page -->
+<!DOCTYPE html>
+<html>
+  <!-- input 및 button에는 onclick이벤트 사용 -->
+  <p id = "referencepage1_pageback" style="width: 60px;" onmouseover="MouseOver()" onmouseout="MouseOut()" onclick="PageBack()">뒤로가기</p>
+
+  <p>test</p>
+</html>
+
+<script>
+  // document.getElementById("anotherpage1_pageback").addEventListener('click', PageBack);
+  function PageBack(){
+    window.history.back();
+  };
+  function MouseOver(event){
+    document.getElementById("referencepage1_pageback").style.color = 'blue';
+    document.getElementById("referencepage1_pageback").style.textDecoration = 'underline';
+    document.getElementById("referencepage1_pageback").style.cursor = 'pointer';
+  }
+  function MouseOut(event){
+    document.getElementById("referencepage1_pageback").style.color = 'black';
+    document.getElementById("referencepage1_pageback").style.textDecoration = 'none';
+    document.getElementById("referencepage1_pageback").style.cursor = 'none';
+  }
+</script>
