@@ -37,10 +37,10 @@ layout: default
 ### 개발 자료실
 
 > 기본. 자료형 변환 정리( ~ to ~ )
-[자세히 보기](./another-page1.html).
+ [자세히 보기(.html)](./another-page1.html).
 
 ```java
-// Java String to Int 예시
+// Java, String to Int 예시
 String to_str = "10";
 int to_num = Integet.parseInt(to_str); // 기본 자료형
 int to_num = Integet.valueOf(to_str);  // 객체
@@ -53,14 +53,32 @@ var to_str = String(10);
 var to_str = 10 + "";
 ```
 
-> Back-end 기본. 재귀함수
-[자세히 보기](./another-page1.html).
+> Back-end 기본. interface Iterator
+ [자세히 보기(.md)](./another-page2.html).
 
 ```java
-// Java String to Int 예시
-String to_str = "10";
-int to_num = Integet.parseInt(to_str); // 기본 자료형
-int to_num = Integet.valueOf(to_str);  // 객체
+public interface Iterator {
+  boolean hasNext();
+  Object next();
+  void remove();
+}
+```
+
+> Back-end 기본. 람다식(Lambda) / 스트림(stream)
+ [자세히 보기(.md)](./another-page3.html).
+
+```java
+(매개변수, ...) -> { 실행문 ... }
+
+new Test(new Rambda(){
+    public void run(){
+      System.out.println("람다식");
+    }
+})
+
+new Test(()->{
+  System.out.println("람다식");
+})
 ```
 
 ### Small image
