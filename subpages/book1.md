@@ -33,4 +33,26 @@ do{
 }while(조건문)
 ```
 
-> 내장 객체
+> 브라우저 객체 모델(BOM) VS 문서 객체 모델(DOM)
+
+```
+브라우저 객체 모델(BOM) -> 브라우저에 계층 구조로 내장되어 있는 객체.
+                          window, location, history, navigator 등이 있으며 윈도우 상단의 옵션.
+                  window.open("url", "창 이름", "옵션") = 페이지 새 창으로 나타냄
+                  window.confirm("질문 내용") = 질문과 답변으로 질의응답 창을 나타냄
+                  window.moveTo(x, y) = 새 창의 위치 이동
+                  window.setTimeout(function(){코드}) = 한 번 일정한 시간 간격으로 함수 호출하여 코드 실행
+
+                  location.href = 주소 영역의 참조 주소 설정 및 URL반환
+                  location.host = URL의 호스트 이름과 포트 번호 반환
+                  location.reload() = 브라우저 F5 키를 누른 것과 동일(새로고침)
+
+                  history.back() = 이전 방문 사이트로 이동
+                  history.forward() = 다음 방문 사이트로 이동
+                  history.length = 방문 기록에 저장된 목록의 개수 반환
+
+                  navigator는 접속한 브라우저의 속성 및 운영체제 등 정보 조회용
+
+문서 객체 모델(DOM) -> HTML 구조를 의미, html의 모든 요소들을 문서 객체로 선택해서 자유롭게 속성 변경 가능
+                      Jquery 문서 객체 모델 / javascript 문서 객체 모델이 있음.(Jquery를 많이 사용)
+```
