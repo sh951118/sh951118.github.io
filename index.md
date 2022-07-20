@@ -26,6 +26,8 @@ layout: default
   - VsCode
   - DBeaver
 
+<br/>
+
 ### **개발 경력 List**
 
 | 기 간             | 기 관 / 장 소                          |
@@ -34,11 +36,21 @@ layout: default
 | 2020-01 ~ 2020-07 | 비트교육센터(Java-FullStack 전문가과정)|
 | 2020-08 ~ 진행중  | 더존비즈온(HR 평가/급여, ERP)          |
 
+<br/>
+
+### **전공 독서 List**
+
+| 책 이름                         | 저 자 / 내 용                                     |
+|:-------------------------------|:--------------------------------------------------|
+| Doit! 자바스크립트+제이쿼리 입문 | 정인용 / front-end 반응형 웹 개발 [자세히 보기(.md)](./subpages/book1.html)                 |
+| 이펙티브 자바                   | 조슈아 블로크 / Java 관련 기초 문법 및 활용 [자세히 보기(.md)](./reference-page1.html)        |
+
+<br/>
 
 ### 개발 자료실
 
 > **기본. 자료형 변환 정리( ~ to ~ )**
- [자세히 보기(.html)](./reference-page1.html).
+ [자세히 보기(.html)](./reference-page1.html)
 
 ```java
 // Java, String to Int 예시
@@ -55,7 +67,7 @@ var to_str = 10 + "";
 ```
 
 > **Back-end 기본. interface Iterator**
- [자세히 보기(.md)](./another-page2.html).
+ [자세히 보기(.md)](./another-page2.html)
 
 ```java
 public interface Iterator {
@@ -66,7 +78,7 @@ public interface Iterator {
 ```
 
 > **Back-end 기본. 람다식(Lambda) / 스트림(stream)**
- [자세히 보기(.md)](./another-page3.html).
+ [자세히 보기(.md)](./another-page3.html)
 
 ```java
 (매개변수, ...) -> { 실행문 ... }
@@ -83,18 +95,27 @@ new Test(()->{
 ```
 
 > **Front-end 기본. Promise**
- [자세히 보기(.md)](./another-page4.html).
+ [자세히 보기(.md)](./another-page4.html)
 
-```javaScript
-return new Promise(function(resolve, reject) {
-  api((~url){
-
-  }).done(
-    resolve();
-  ).fail(){
-
-  }
+```javascript
+// 함수 안에서 Promise 생성 시, .then으로 시행주기 잡아냄.
+Test().then(function(){
+  // resolve()를 탄 경우
+}).catch(function(){
+  // reject()를 탄 경우
 });
+...
+function Test(){
+    return new Promise(function(resolve, reject) {
+      api((~url){
+        .....
+      }).done(
+        resolve();
+      ).fail(){
+        reject();
+      }
+    });
+}
 ```
 
 ### Small image
