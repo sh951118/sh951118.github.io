@@ -2,10 +2,11 @@
 layout: default
 ---
 <!-- MarkDown 텍스트 예시 : Text can be **bold**, _italic_, or ~~strikethrough~~. -->
+<!-- stack 뱃지 가져오는 사이트 참조 : https://simpleicons.org/ -->
 ### **경험 언어 Stack**
 - Back-end item
   - Java 　　　　　　　　　　　　　　　　　　 　 　　　　![Octocat](https://img.shields.io/badge/JAVA-007396?style=flat&logo=java&logoColor=white)
-  - Apache(Web Server) / Tomcat(WAS)　　　　　　　　　![Octocat](https://img.shields.io/badge/Apache-D22128?style=flat&logo=Apache&logoColor=white)
+  - Apache(Web Server) / Tomcat(WAS)　　　　　　　　　![Octocat](https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat&logo=Apache Tomcat&logoColor=white)
   - Spring / Spring Boot / MSA(공부중..)　　　　　　　　　![Octocat](https://img.shields.io/badge/Spring-6DB33F?style=flat&logo=Spring&logoColor=white) ![Octocat](https://img.shields.io/badge/Spring Boot-6DB33F?style=flat&logo=Spring Boot&logoColor=white)
   - DataBase(관계형)
     - MariaDB / MySql(same)　　　　　　　　　　　　![Octocat](https://img.shields.io/badge/MariaDB-003545?style=flat&logo=MariaDB&logoColor=white)
