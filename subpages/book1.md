@@ -56,3 +56,40 @@ do{
 문서 객체 모델(DOM) -> HTML 구조를 의미, html의 모든 요소들을 문서 객체로 선택해서 자유롭게 속성 변경 가능
                       Jquery 문서 객체 모델 / javascript 문서 객체 모델이 있음.(Jquery를 많이 사용)
 ```
+
+> 객체 생성자 함수
+
+```javascript
+// 객체 생성자 함수명은 소문자로 시작해도 되지만 가능하면 단어별 첫문자는 대문자로 사용
+ex.) var test = new GetTest(data1, data2);
+```
+
+> 메모리 절약을 위한 프로토타입(prototype) 사용
+
+```javascript
+function GetTestSetting(id, password){
+  this.userId = id;
+  this.userPassword = password;
+}
+
+GetTestSetting.prototype.getId = function(){
+  var str = "";
+  str += "아이디는 " + this.userId;
+  return str;
+}
+
+GetTestSetting.prototype.getPassword = function(){
+  var str = "";
+  str += "비밀번호는 " + this.userPassword + " 입니다.";
+  return str;
+}
+
+var test1 = new GetTestSetting("1", "1234");
+var test2 = new GetTestSetting("1", "4567");
+
+test1.getId(); // "아이디는 1"
+test1.getPassword(); // "비밀번호는 1234 입니다."
+
+test1.getId() === test2.getId() // 해당 결과는 true, 두 객체가 같은 함수를 사용하고 있음을 의미.
+
+```
