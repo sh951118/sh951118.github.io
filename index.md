@@ -24,7 +24,7 @@ layout: default
   - Jenkins　　　　　　　　　　　　　　　　　　　　　　　![Octocat](https://img.shields.io/badge/Jenkins-D24939?style=flat&logo=Jenkins&logoColor=white)
 
 - Development tools
-  - Eclipse(IntelliJ / AWS 사용해보고 싶다..)
+  - Eclipse  /  (IntelliJ, AWS -> 나중에 꼭 사용해보기)
   - VsCode
   - DBeaver
 
@@ -52,13 +52,12 @@ layout: default
 ### 개발 자료실
 
 > **기본. 자료형 변환 정리( ~ to ~ )**
- [자세히 보기(.html)](./reference-page1.html)
 
 ```java
 // Java, String to Int 예시
 String to_str = "10";
-int to_num = Integet.parseInt(to_str); // 기본 자료형
-int to_num = Integet.valueOf(to_str);  // 객체
+int to_num = Integer.parseInt(to_str); // 기본 자료형
+int to_num = Intege.valueOf(to_str);  // 객체
 ```
 ```js
 // JavaScript 예시
@@ -69,7 +68,7 @@ var to_str = 10 + "";
 ```
 
 > **Back-end 기본. interface Iterator**
- [자세히 보기(.md)](./another-page2.html)
+ [자세히 보기(.md)](./subpages/another-page1.html)
 
 ```java
 public interface Iterator {
@@ -80,7 +79,7 @@ public interface Iterator {
 ```
 
 > **Back-end 기본. 람다식(Lambda) / 스트림(stream)**
- [자세히 보기(.md)](./another-page3.html)
+ [자세히 보기(.md)](./subpages/another-page2.html)
 
 ```java
 (매개변수, ...) -> { 실행문 ... }
@@ -120,18 +119,9 @@ function Test(){
 }
 ```
 
-### Small image
+<br/><br/>
 
 ![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
 
-### Large image
-
 ![Branching](https://guides.github.com/activities/hello-world/branching.png)
 
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
