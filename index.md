@@ -49,9 +49,9 @@ layout: default
 
 <br/>
 
-### 개발 자료실
+### **개발 자료실**
 
-> **기본. 자료형 변환 정리( ~ to ~ )**
+* **자료형 변환 정리( ~ to ~ )**
 
 ```java
 // Java, String to Int 예시
@@ -67,57 +67,16 @@ var to_str = String(10);
 var to_str = 10 + "";
 ```
 
-> **Back-end 기본. interface Iterator**
- [자세히 보기(.md)](./subpages/another-page1.html)
+* **Java 기본**
+> ***1. interface In Iterator***　[자세히 보기(.md)](./subpages/another-page_back1.html)<br/><br/>
+> ***2. 람다식(Lambda) / 스트림(stream)***　[자세히 보기(.md)](./subpages/another-page_back2.html)<br/><br/>
 
-```java
-public interface Iterator {
-  boolean hasNext();
-  Object next();
-  void remove();
-}
-```
+<br/><br/>
 
-> **Back-end 기본. 람다식(Lambda) / 스트림(stream)**
- [자세히 보기(.md)](./subpages/another-page2.html)
 
-```java
-(매개변수, ...) -> { 실행문 ... }
+* **JavaScript 기본**
+> ***1. Promise, 비동기 작업의 결정***　[자세히 보기(.md)](./subpages/another-page_front1.html)<br/><br/>
 
-new Test(new Rambda(){
-    public void run(){
-      System.out.println("람다식");
-    }
-})
-
-new Test(()->{
-  System.out.println("람다식");
-})
-```
-
-> **Front-end 기본. Promise**
- [자세히 보기(.md)](./another-page4.html)
-
-```javascript
-// 함수 안에서 Promise 생성 시, .then으로 시행주기 잡아냄.
-Test().then(function(){
-  // resolve()를 탄 경우
-}).catch(function(){
-  // reject()를 탄 경우
-});
-...
-function Test(){
-    return new Promise(function(resolve, reject) {
-      api((~url){
-        .....
-      }).done(
-        resolve();
-      ).fail(){
-        reject();
-      }
-    });
-}
-```
 
 <br/><br/>
 

@@ -40,7 +40,7 @@ lamT -> { lamT.start(); }
 (x, int y) -> x+y
 (x, final y) -> x+y
 
-// 기존 자바 문법
+// 기존 자바 문법1.
 new Thread(new Runnable() {
    @Override
    public void run() {
@@ -52,6 +52,20 @@ new Thread(new Runnable() {
 new Thread(()->{
       System.out.println("Welcome Heejin blog");
 }).start();
+
+
+// 기존 자바 문법2.
+(매개변수, ...) -> { 실행문 ... }
+
+new Test(new Rambda(){
+    public void run(){
+      System.out.println("람다식");
+    }
+})
+
+new Test(()->{
+  System.out.println("람다식");
+})
 ```
 
 > **함수형 인터페이스 @FunctionalInterface**

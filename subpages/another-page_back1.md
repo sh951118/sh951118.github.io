@@ -14,6 +14,14 @@ Iterator의 장점<br/>
 <br/>
 
 ```java
+// 메서드
+public interface Iterator {
+  boolean hasNext();
+  Object next();
+  void remove();
+}
+
+// 예시.
 import java.util.HashSet;
 import java.util.List;
 
