@@ -51,28 +51,15 @@ layout: default
 
 ### **개발 자료실**
 
-* **자료형 변환 정리( ~ to ~ )**
+* **자료형 변환 정리( ~ to ~ ) Java and JavaScript**　[자세히 보기(.md)](./subpages/another-page_back.html)<br/><br/>
 
-```java
-// Java, String to Int 예시
-String to_str = "10";
-int to_num = Integer.parseInt(to_str); // 기본 자료형
-int to_num = Intege.valueOf(to_str);  // 객체
-```
-```js
-// JavaScript 예시
-var to_int = parseInt("10"); // 정수
-var to_int = Nember("10");   // 정수&실수
-var to_str = String(10);
-var to_str = 10 + "";
-```
+<br/><br/>
 
 * **Java 기본**
 > ***1. interface In Iterator***　[자세히 보기(.md)](./subpages/another-page_back1.html)<br/><br/>
 > ***2. 람다식(Lambda) / 스트림(stream)***　[자세히 보기(.md)](./subpages/another-page_back2.html)<br/><br/>
 
 <br/><br/>
-
 
 * **JavaScript 기본**
 > ***1. Promise, 비동기 작업의 결정***　[자세히 보기(.md)](./subpages/another-page_front1.html)<br/><br/>
