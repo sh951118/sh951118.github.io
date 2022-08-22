@@ -33,7 +33,7 @@ do{
 }while(조건문)
 ```
 
-> 브라우저 객체 모델(BOM) VS 문서 객체 모델(DOM)
+> **브라우저 객체 모델(BOM) VS 문서 객체 모델(DOM)**
 
 ```
 브라우저 객체 모델(BOM) -> 브라우저에 계층 구조로 내장되어 있는 객체.
@@ -57,14 +57,14 @@ do{
                       Jquery 문서 객체 모델 / javascript 문서 객체 모델이 있음.(Jquery를 많이 사용)
 ```
 
-> 객체 생성자 함수
+> **객체 생성자 함수**
 
 ```javascript
 // 객체 생성자 함수명은 소문자로 시작해도 되지만 가능하면 단어별 첫문자는 대문자로 사용
 ex.) var test = new GetTest(data1, data2);
 ```
 
-> 메모리 절약을 위한 프로토타입(prototype) 사용
+> **메모리 절약을 위한 프로토타입(prototype) 사용**
 
 ```javascript
 function GetTestSetting(id, password){
@@ -92,4 +92,30 @@ test1.getPassword(); // "비밀번호는 1234 입니다."
 
 test1.getId() === test2.getId() // 해당 결과는 true, 두 객체가 같은 함수를 사용하고 있음을 의미.
 
+```
+
+> **함수 return 문의 역할**
+
+```javascript
+function 함수명(num1, num2){
+  return num1 + num2;
+}
+
+var result = sum(10 + 20);
+// result = 30;
+```
+
+> **즉시 실행 함수**
+
+```javascript
+// 즉시 실행 함수는 함수의 충돌을 방지하기 위해 해당 함수 안에서 지역함수로 호출 함.
+(function(){
+  var num = 100;
+
+  function menu(){
+    num += 100;
+    console.log(num); // 200;
+  }
+  menu();
+}());
 ```
