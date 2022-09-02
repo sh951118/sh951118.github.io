@@ -13,109 +13,57 @@ Java 타입 -> 인터페이스, 클래스, 배열, 기본타입(4가지)
 참조타입(reference type) -> 인터페이스, 클래스, 배열. 즉, 객체
 ```
 
-> Script와 HTML은 외부로 분리하여야 한다. 그 이유는 JS소스 손상 방지 및 프로젝트 관리를 원활하게 하기 위함.<br/>
-> -> 회사 기준에 따라 다른것 같다. html파일만을 위주로 배포하는 회사의 경우 JS로 뺄 경우에 관리가 어렵게 느낌.(내부 플랫폼 사용)
-```
-<script src="JS파일 경로"></script>
-```
+> **1. 생성자 대신 static factory method를 고려하라**
 
-> **while  vs  do while**
+```java
+public class Test{
+  int testi;
 
-```javascript
-//while은 조건식을 먼저 검사한 후에 코드 실행여부 결정
-while(조건문){
-  코드 / 증감식 등.
-}
-
-//do while은 반드시 한 번은 코드 실행 후에 조건식 검사.
-do{
-  코드 / 증감식 등.
-}while(조건문)
-```
-
-> **브라우저 객체 모델(BOM) VS 문서 객체 모델(DOM)**
-
-```
-브라우저 객체 모델(BOM) -> 브라우저에 계층 구조로 내장되어 있는 객체.
-                          window, location, history, navigator 등이 있으며 윈도우 상단의 옵션.
-                  window.open("url", "창 이름", "옵션") = 페이지 새 창으로 나타냄
-                  window.confirm("질문 내용") = 질문과 답변으로 질의응답 창을 나타냄
-                  window.moveTo(x, y) = 새 창의 위치 이동
-                  window.setTimeout(function(){코드}) = 한 번 일정한 시간 간격으로 함수 호출하여 코드 실행
-
-                  location.href = 주소 영역의 참조 주소 설정 및 URL반환
-                  location.host = URL의 호스트 이름과 포트 번호 반환
-                  location.reload() = 브라우저 F5 키를 누른 것과 동일(새로고침)
-
-                  history.back() = 이전 방문 사이트로 이동
-                  history.forward() = 다음 방문 사이트로 이동
-                  history.length = 방문 기록에 저장된 목록의 개수 반환
-
-                  navigator는 접속한 브라우저의 속성 및 운영체제 등 정보 조회용
-
-문서 객체 모델(DOM) -> HTML 구조를 의미, html의 모든 요소들을 문서 객체로 선택해서 자유롭게 속성 변경 가능
-                      Jquery 문서 객체 모델 / javascript 문서 객체 모델이 있음.(Jquery를 많이 사용)
-```
-
-> **객체 생성자 함수**
-
-```javascript
-// 객체 생성자 함수명은 소문자로 시작해도 되지만 가능하면 단어별 첫문자는 대문자로 사용
-ex.) var test = new GetTest(data1, data2);
-```
-
-> **메모리 절약을 위한 프로토타입(prototype) 사용**
-
-```javascript
-function GetTestSetting(id, password){
-  this.userId = id;
-  this.userPassword = password;
-}
-
-GetTestSetting.prototype.getId = function(){
-  var str = "";
-  str += "아이디는 " + this.userId;
-  return str;
-}
-
-GetTestSetting.prototype.getPassword = function(){
-  var str = "";
-  str += "비밀번호는 " + this.userPassword + " 입니다.";
-  return str;
-}
-
-var test1 = new GetTestSetting("1", "1234");
-var test2 = new GetTestSetting("1", "4567");
-
-test1.getId(); // "아이디는 1"
-test1.getPassword(); // "비밀번호는 1234 입니다."
-
-test1.getId() === test2.getId() // 해당 결과는 true, 두 객체가 같은 함수를 사용하고 있음을 의미.
-
-```
-
-> **함수 return 문의 역할**
-
-```javascript
-function 함수명(num1, num2){
-  return num1 + num2;
-}
-
-var result = sum(10 + 20);
-// result = 30;
-```
-
-> **즉시 실행 함수**
-
-```javascript
-// 즉시 실행 함수는 함수의 충돌을 방지하기 위해 해당 함수 안에서 지역함수로 호출 함.
-(function(){
-  var num = 100;
-
-  function menu(){
-    num += 100;
-    console.log(num); // 200;
+  public Test(int testi){
+    this.testi = testi;
   }
-  menu();
-}());
+  public static void main(String[] args){
+      Test testdata = new Test(500);
+  }
+}
+
+  // static method사용
+public class Test{
+  int testi;
+
+  public Test(int testi){
+    this.testi = testi;
+  }
+  public static Test staticMethod(int testi){
+    this.testi = testi;
+  }
+  public static void main(String[] args){
+      Test testdata1 = new Test(500);
+      Test testdata2 = Test.staticMethod(500); // staticMethod라는 static메서드를 사용하여 의미를 전달
+  }
+}
 ```
+
+> **2. 생성자에 매개변수가 많다면 빌더를 고려하라**
+
+> - DTO, Model을 사용하는 경우에는 직접 빌더를 사용할 필요는 없으나 객체를 생성하는 대부분의 경우에는 빌더 패턴을 적용하는것이 좋다.
+
+> **3. private 생성자나 열거 타입으로 싱글턴임을 보증하라**
+
+> - 클래스를 싱글턴으로 만들면 이를 사용하는 클라이언트를 테스트하기 어려울 수 있다.
+> - 싱글턴은 보통 두 방식 존재, 모두 생성자는 private로 감춰두고 유일한 인스턴스에 접근할 수 있는 수단으로 public static 멤버를 마련해둔다.
+
+> **4. 인스턴스화를 막으려거든 private 생성자를 사용하라**
+
+> - 인스턴스화란? 메소드와 변수를 모아놓은 것에 불과한 클래스를 사용할 수 있도록 Test tx = new Test()와 같이 선언을 통해 해당 클래스의 변수나 메소드를 사용 가능한 형태로 만드는 것.
+
+> **5. 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라**
+
+> **핵심 정리**
+
+- 클래스가 내부적으로 하나 이상의 자원에 의존하고, 그 자원이 클래스 동작에 영향을 준다면 싱글턴과 정적 유틸리티 클래스는 사용하지 않는것이 좋다. 이 자원들을 클래스가 직접 만들게 해서도 안된다.
+- 필요한 자원들을 생성자 / 정적 팩터리 / 빌더 에게 넘겨주면 의존 객체 주입이라는 기법을 통해 유연성, 재사용성 등이 개선된다.
+
+> **6. 불필요한 객체 생성을 피하라**
+
+> **7. 다 쓴 객체 참조를 해제하라**
