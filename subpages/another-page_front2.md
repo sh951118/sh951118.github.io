@@ -59,6 +59,7 @@ buy.buycar(); // 나는 국산차를 탑니다.
 
 
 - **번외2. 생성자 함수**
+
 ```javascript
 var newcar = '아반떼';
 
@@ -72,7 +73,7 @@ function HyundaiCar(name) {
   this.reply = getcarname;
 }
 
-// 새로운 거울 생성
+// 새로운 차고 생성
 var newHyundaiCar = new HyundaiCar('투싼');
 
 newHyundaiCar.reply(); // 제가 살 차는 투싼입니다.
