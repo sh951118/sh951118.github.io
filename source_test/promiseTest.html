@@ -1,0 +1,69 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Test Page</title>
+</head>
+<body>
+    <button>test</button>
+</body>
+</html>
+<script>
+    var functestcount = 1;
+    var promistestcount = 1;
+
+    // 중첩 함수 사용
+    countTestfcn();
+    function countTestfcn(){
+        const count = functestcount;
+        test1(functestcount);
+    }
+    function test1(count){
+        functestcount = count + 1;
+        // api ~~{
+        // }.return(){
+        test2(functestcount);
+        // }
+    }
+    function test2(count){
+        functestcount = count + 2;
+        test3(functestcount);
+    }
+    function test3(count){
+        console.log(functestcount);
+    }
+
+
+    // Promise 사용
+    countOne().then(function(){
+        // 더하기 2
+        funcPlus2(promistestcount);
+    }).then(function(){
+        // 더하기 1
+        funcPlus1(promistestcount);
+    }).then(function(){
+        console.log(promistestcount);
+    });
+
+    function funcPlus1(count){
+        promistestcount = count + 1;
+    }
+
+    function funcPlus2(count){
+        promistestcount = count + 2;
+    }
+
+    function countOne(){
+        return new Promise(function(resolve, reject) {
+            // resolve : 성공
+            resolve();
+            // reject : 실패
+        });
+    }
+
+</script>
