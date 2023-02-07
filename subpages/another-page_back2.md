@@ -129,7 +129,17 @@ for(Model mstItem :mstList) {
         .collect(Collectors.groupingBy(p -> p.getUp_dept_cd())); // GroupingBy 를 이용하면 데이터 집합을 하나 이상의 특성으로 분류, 그룹화하는 연산
 }
 ```
+List<Fedu100VO> newModel = new ArrayList<Fedu100VO>();
+            for(Fedu100VO data : dataList) {
+            	if(data.getAddr1() == data.getAddr2()) {
+            		newModel.add(data);
+            	}
+            }
+            List<Fedu100VO> data = dataList.stream()
+            		.filter(x -> x.getAddr1() == x.getAddr2())
+            		.collect(Collectors.toList());
 
+                    
 > **Stream 가공하기 종류(중간연산)**
 1. [ 필터링 - Filter ]
 2. [ 데이터 변환 - Map ]

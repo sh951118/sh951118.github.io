@@ -1,0 +1,154 @@
+---
+layout: default
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <h3 id="-stack-"><strong>Java</strong></h3>
+    <ul>
+        <li><strong>Java 8</strong> 
+          <ul>
+            <li id="emphasis_letter"><strong>Lambda Expression 및 Method Reference 도입</strong></li>
+                <p>함수형 표현의 시작</p>
+                <table>
+                    <thead>
+                    <tr>
+                        <th style="text-align:left">
+                            기존의 방식
+                        </th>
+                        <th style="text-align:left">
+                            람다 방식
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style="text-align:left">
+                            반환타입 메소드명 (매개변수, ...) {<br />
+                            &nbsp&nbsp실행문<br />
+                            }
+                        </td>
+                        <td style="text-align:left">
+                            (매개변수, ... ) -> { 실행문 ... }
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            <li id="emphasis_letter"><strong>Collections & Streams</strong></li>
+            <p>Collections에서 Streams API를 사용하여, 이전의 반복문이 아닌 함수형 구현</p>
+            <li><strong>Optional Class 도입</strong></li>
+            <p>Optional Class를 이용하여 NullPointerException이 발생하는 것을 방지해 준다.</p>
+          </ul>
+        </li>
+
+        <li><strong>Java 9</strong> 
+          <ul>
+            <li><strong>Interface Private Method 도입</strong></li>
+            <p>interface 메서드들을 default, static이 아닌, private로 지정하여, interface에 대한 보안을 향상시킨다</p>
+
+            <li><strong>Module System & Jigsaw Project</strong></li>
+            <p>Java 플랫폼 간소화 및 모듈화를 통해, 성능 및 사이즈 향상, 유연한 이미지 구성이 가능하도록 만들어 준다</p>
+          </ul>
+        
+        </li>
+
+        <li><strong>Java 10</strong> 
+            <ul>
+              <li><strong>var - 지역변수 type 추론 Keyword 도입</strong></li>
+              <p>변수의 타입을 컴파일러가 결정해 주는 var 변수 타입을 선언할 수 있다</p>
+  
+              <li id="emphasis_letter"><strong>Docker 컨테이너 지원</strong></li>
+              <p>Docker 환경에 맞게 수정</p>
+            </ul>
+        </li>
+
+        <li><strong>Java 11</strong> 
+            <ul>
+              <li><strong>String & Files 에 새로운 Method 추가</strong></li>
+              <p>String에 strip, isBlack, lines 등, Files에 readString 등 Method 추가</p>
+  
+              <li id="emphasis_letter"><strong>Lambda 인수로 var 사용 가능</strong></li>
+              <p>람다 인수 선언시 var 키워드 사용 가능</p>
+
+              <li><strong>ZGC - 차세대 Garbage Collector</strong></li>
+              <p>새로운 Garbage Collector 도입</p>
+            </ul>
+        </li>
+
+        <li><strong>Java 12</strong> 
+            <ul>
+              <li id="emphasis_letter"><strong>개선된 switch문 표현방식 지원</strong></li>
+              <p>switch문에서 "->" 사용으로, 코딩 간소화</p>
+            </ul>
+            <pre>
+                기존 문법
+                String testSwitch = "";
+                switch(data){
+                    case "one" :
+                        testSwitch = "1";
+                        break;
+                    case "two" :
+                        testSwitch = "2";
+                        break;
+                    default:
+                }
+
+                람다식 문법
+                String testSwitch = "";
+                switch(data){
+                    case "one" -> testSwitch = "1";
+                    case "two" -> testSwitch = "2";
+                    default -> throw new Exception ~~
+                }
+            </pre>
+        </li>
+
+        <li><strong>Java 13-15</strong> 
+            <ul>
+              <li><strong>Text Block 기능 도입</strong></li>
+              <p>String에서 여러 줄의 문자열을 한번에 입력할 수 있다</p>
+            </ul>
+        </li>
+
+        <li><strong>Java 14</strong> 
+            <ul>
+              <li id="emphasis_letter"><strong>NullPointerException 기능 추가</strong></li>
+              <p>NullPointerExceptions이 발생할 때, Exception 메세지에 어떤 변수가 null 인지 알려줍니다.</p>
+
+              <li><strong>Record Class 도입</strong></li>
+              <p>data를 다루는 record 클래스를 이용해서 간단하게 새로운 데이터 클래스 생성</p>
+
+              <li><strong>Sealed Class 도입</strong></li>
+              <p>sealed 키워드를 이용하여 클래스의 상속을 제한할 수 있다.</p>
+            </ul>
+        </li>
+    </ul>
+</head>
+<body>
+    
+</body>
+<style>
+    #emphasis_letter {
+        color: red
+    }
+
+
+</style>
+
+<script>
+let user1 = {
+      admin() {
+        alert("관리자 계정입니다.");
+     }
+    }
+    let user2 = {};
+    // user1.admin?.(); // 관리자 계정입니다.
+    // user2.admin?.(); // undefined
+
+    
+    // user1.admin(); // 관리자 계정입니다.
+</script>
+</html> 
+
