@@ -159,6 +159,34 @@ List<Fedu100VO> newModel = new ArrayList<Fedu100VO>();
 4. Collectors.joining(", ") -> List가 아닌 String으로 붙여주거나 할 때
 5. Collectors.groupingBy() -> group by
 
+> **Stream을 병렬처리 사용 및 성능**
+
+```java
+Stream<String> stream = list.stream();
+stream.parallel(). ~를 사용하여 작업을 병렬로 처리(멀티 쓰레드 사용)
+ 
+Stream<String> stream = list.parallelStream(); 처럼 병렬처리 객체생성
+```
+
+1.요소의 수가 많고 요소당 처리시간이 긴 경우
+ - 병렬 처리는 스레드 풀을 생성하고 스레드를 생성하는 추가적인 비용이 발생한다. 때문에 요소의 수가 적다면 오히려 순차 처리가 빠를 수 있다.
+ - 멀티 코어에서 데이터의 이동은 오버헤드가 크기때문에 데이터 전송 시간보다 오래 걸리는 작업만 병렬로 처리하는 것이 좋다.
+
+2.스트림 소스의 종류
+ - ArrayList나 배열은 인덱스로 요소를 관리해 분리가 쉽지만 LinkedList는 분할을 위해서는 모두 탐색을 해야 하기 때문에 느릴 수 있다.
+
+3.코어(core)의 수
+ - 만약 실행하는 프로세서가 싱글 코어라면 스레드의 수만 증가하고 동시성 작업으로 진행되기 때문에 오히려 성능이 하락한다.
+
+4.병렬로 수행하기 어려운 스트림 모델
+ - iterate()의 경우, 이전 연산의 결과가 스트림의 입력에 영향을 미친다. 때문에 이전 연산이 완료되어야 다음 스트림으로 넘어갈 수 있기 때문에 분할하기 어려워 성능이 오히려 하락한다.
+
+5.박싱의 최소화
+ - 박싱과 언박싱은 성능을 크게 하락시키기 때문에 기본형 스트림(IntStream, LongStream, DoubleStream)을 우선 사용해야한다.
+
+6.순서에 의존하는 연산
+ - 순서에 의존하는 연산은 스트림에서 수행하게 되면 많은 비용이 발생한다.
+ - 순서가 중요하지 않다면 findFirst보다 findAny가 좋고, 단순 limit보다 unordered().limit이 더 효율적이다.
 
 
 <br/><br/><br/>
