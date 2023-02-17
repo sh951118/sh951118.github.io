@@ -2,6 +2,47 @@
 layout: default
 ---
 
+### **interface 란?**
+기본적으로 자바는 다중 상속이 불가능하나 이를 구현하게 해주는 기술이다.
+반드시 사전에 정의된 추상 메소드와 상수만을 가질 수 있다.
+
+```java
+//추상클래스
+// 추상클래스는 내부에서 코드를 넣을 수 있음.
+abstract class Dog{
+  public void show(){
+    System.out.println("Hellow World");
+  }
+}
+//인터페이스
+// 인터페이스는 추상화의 정도가 높음으로 내부에 함수 존재만 사용 가능. 즉, 설계만 가능.
+public interface Dog{
+  public void show();
+}
+public interface Cat{
+  abstract void crying();
+}
+
+// 위의 코드를 상복받는 부분(Dog, Cat 둘 다 다중상속 가능)
+public class Main implements Dog, Cat {
+  public static void main(Stirng[] args){
+    Main main = new Main();
+    main.crying();
+    main.show();
+  }
+  @Override
+  public void crying(){
+    System.out.println("야옹");
+  }
+  @Override
+  public void show(){
+    System.out.println("Hello World");
+  }
+}
+
+```
+
+
 ### **Iterator 란?**
 Iterator는 자바의 컬렉션 프레임웍에서 컬렉션에 저장되어 있는 요소들을 읽어오는 방법을 표준화 하였는데 그 중 하나가 Iterator이다.<br/>
 ArrayList, HashSet과 같은 컬렉션을 반복하는 데 사용할 수 있는 객체다. iterator는 반복의 기술 용어기 때문에 반복자라고 한다.
