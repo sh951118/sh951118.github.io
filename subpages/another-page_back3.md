@@ -41,7 +41,7 @@ JUnit5 -> 자체로 모듈화가 되어 있음. (Platform, Jupiter, Vintage) 실
  - 테스트를 하고 싶지 않은 클래스나 메서드에 붙이는 어노테이션
  - JUnit4에서는 @Ignore과 유사
 
-#### 5. Annotations - @DisplayName (JUnit5에서만 사용 
+#### 5. Annotations - @DisplayName (JUnit5에서만 사용)
  - 어떤 테스트인지 쉽게 표현할 수 있도록 해주는 어노테이션(공백, 특수문자 등 모두 지원)
 
 ```java
